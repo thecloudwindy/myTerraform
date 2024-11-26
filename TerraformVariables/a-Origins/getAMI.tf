@@ -1,11 +1,9 @@
-# GET_AMI
-
-data "aws_ami" "amazonLinux" {
-    owners = [ "amazon" ]
-    most_recent = true
-    filter {
+data "aws_ami" "amazonlinux" {
+  owners = ["amazon"]
+  most_recent = true 
+  filter {
     name = "name"
-    values = [ "amzn2-ami-hvm-*-gp2" ]
+    values = [ "amzn2-ami-hvm*-gp2" ]
   }
   filter {
     name = "root-device-type"
@@ -17,6 +15,6 @@ data "aws_ami" "amazonLinux" {
   }
   filter {
     name = "architecture"
-    values = [ "x86_64" ]
+    values = ["x86_64"]
   }
 }
